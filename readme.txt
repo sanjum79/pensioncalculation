@@ -1,5 +1,4 @@
 
-
 1. Creating a docker image
 
   docker build -t pensioncalculationapi:1.0.0 .
