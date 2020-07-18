@@ -32,12 +32,13 @@ public class PensionCalculationResource {
 
 	@ApiOperation(value = "calculates gross monthly pension")
 	@GetMapping(path = "/pension")
-	public ResponseEntity<?> calculateGrossMonthlyPension(@RequestParam(name = PARAM_AGE) int age,
-														  					@ApiParam(value = "workStart [yyyy-mm-dd]")
-														  					@RequestParam(name = PARAM_WORK_START)
-																		   @DateTimeFormat(iso = ISO.DATE)
-														  					LocalDate workStart,
-																		   @RequestParam(name = PARAM_GROSS_YEARLY_SALARY) int grossSalary) {
+	public ResponseEntity<?> calculateGrossMonthlyPension(
+															@RequestParam(name = PARAM_AGE) int age,
+															@ApiParam(value = "workStart [yyyy-mm-dd]", required = true)
+															@RequestParam(name = PARAM_WORK_START)
+															@DateTimeFormat(iso = ISO.DATE)
+															LocalDate workStart,
+															@RequestParam(name = PARAM_GROSS_YEARLY_SALARY) int grossSalary) {
 
 
 		if (age <= 16) {
