@@ -35,7 +35,7 @@ public class PensionCalculationService {
 		return Period.between(workStartYear, pensionYear).getYears();
 	}
 
-	protected LocalDate calculatePensionYear(long age) {
+	protected LocalDate calculatePensionYear(int age) {
 		LocalDate yearOfBirth = calculateYearOfBirth(age);
 		if(yearOfBirth.getYear() == earlyPensionYear) {
 			return yearOfBirth.plusYears(earlyPensionAge);
@@ -43,7 +43,7 @@ public class PensionCalculationService {
 		return yearOfBirth.plusYears(normalPensionAge);
 	}
 
-	protected LocalDate calculateYearOfBirth(long age) {
+	protected LocalDate calculateYearOfBirth(int age) {
 		return LocalDate.now().minusYears(age);
 	}
 }

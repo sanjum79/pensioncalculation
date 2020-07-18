@@ -52,6 +52,12 @@ public class PensionCalculationServiceTest {
 		assertEquals(pensionYear.getYear(), 2024);
 	}
 
+	@Test
+	public void testCalculateYearOfBirth() {
+		LocalDate birthYear = pensionCalculationService.calculateYearOfBirth(TEST_AGE_NORMAL);
+		assertEquals(birthYear.getYear(), 1979);
+	}
+
 	@TestConfiguration
 	static class TestContextConfiguration {
 
