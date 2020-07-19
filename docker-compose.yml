@@ -1,7 +1,9 @@
 version: '3'
 services:
   pensioncalculationrestapi:
-    image: "pensioncalculationapi:1.0.0"
+    build:
+      context: .
+    image: "pensionapi:1.0.0"
     container_name: pensioncalculation
     ports:
       - 8080:8080
