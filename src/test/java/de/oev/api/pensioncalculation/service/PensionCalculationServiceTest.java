@@ -1,5 +1,6 @@
 package de.oev.api.pensioncalculation.service;
 
+import de.oev.api.pensioncalculation.model.PensionResponseDTO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +35,10 @@ public class PensionCalculationServiceTest {
 
 	@Test
 	public void shouldCalculateGrossPension() {
-		long grossMonthlyPension = pensionCalculationService.calculateGrossPension(TEST_AGE_NORMAL,
-																				  TEST_WORK_START,
-																				  TEST_GROSS_YEARLY_SALARY).getMonthlyGrossPension();
-		assertNotNull(grossMonthlyPension);
+		PensionResponseDTO responseDTO = pensionCalculationService.calculateGrossPension(TEST_AGE_NORMAL,
+																			 TEST_WORK_START,
+																			 TEST_GROSS_YEARLY_SALARY);
+		assertNotNull(responseDTO);
 	}
 
 	@Test
